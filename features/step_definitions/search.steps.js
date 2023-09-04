@@ -19,50 +19,50 @@ After(async function () {
   }
 });
 
-When("user choose date", async function () {
+When("user chooses a date", async function () {
   return await clickElement(this.page, "body nav a:nth-child(2)");
 });
-When("user choose date that has been choosen earlier", async function () {
+When("user chooses a date that has been choosen earlier", async function () {
     return await clickElement(this.page, "body nav a:nth-child(2)");
   });
-When("user choose time of a movie", async function () {
+When("user chooses the time for a movie", async function () {
   return await clickElement(this.page, "body main section:nth-child(2) div:nth-child(3) ul li a");
 });
-When("user choose time of a movie that has been choosen earlier", async function () {
+When("user chooses the time for a movie that has been choosen earlier", async function () {
     return await clickElement(this.page, "body main section:nth-child(2) div:nth-child(3) ul li a");
   });
-When("user choose a first sit", async function () {
+When("user chooses the first seat", async function () {
   return await clickElement(
     this.page,
     ".buying-scheme__wrapper div:nth-child(5) span:nth-child(9)"
   );
 });
-When("user choose a second sit", async function () {
+When("user chooses the second seat", async function () {
   return await clickElement(
     this.page,
     ".buying-scheme__wrapper div:nth-child(2) span:nth-child(8)"
   );
 });
-When("user choose a sit", async function () {
+When("user chooses a seat", async function () {
   return await clickElement(
     this.page,
     ".buying-scheme__wrapper div:nth-child(1) span:nth-child(7)"
   );
 });
-When("user choose a sit that has been choosen earlier", async function () {
+When("user chooses a seat that has been choosen earlier", async function () {
   return await clickElement(
     this.page,
     ".buying-scheme__wrapper div:nth-child(1) span:nth-child(7)"
   );
 });
-When("user click on the booking button", async function () {
+When("user clicks on the booking button", async function () {
   return await clickElement(this.page, "button.acceptin-button");
 });
-When("user click on the button to get booking code", async function () {
+When("user clicks on the button to retrieve a booking code", async function () {
   return await clickElement(this.page, "button.acceptin-button");
 });
 
-Then("user get the code and text {string}", async function (string) {
+Then("user receives the code and text {string}", async function (string) {
   const actual = await getText(this.page, "h2.ticket__check-title");
   const expected = await string;
   expect(actual).contains(expected);
