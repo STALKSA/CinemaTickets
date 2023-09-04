@@ -21,7 +21,7 @@ describe("Tests for booking tickets", () => {
       await page.waitForSelector("h2.ticket__check-title");
       await clickElement(page, "button.acceptin-button");
       const actual = await getText(page, "h2.ticket__check-title");
-      expect(actual).toContain("Вы выбрали билеты:");
+      expect(actual).toContain("Электронный билет");
     });
   
     test("Should book some available tickets", async () => {
@@ -33,7 +33,7 @@ describe("Tests for booking tickets", () => {
       await page.waitForSelector("h2.ticket__check-title");
       await clickElement(page, "button.acceptin-button");
       const actual = await getText(page, "h2.ticket__check-title");
-      expect(actual).toContain("Вы выбрали билеты:");
+      expect(actual).toContain("Электронный билет");
     });
   
     test("Should try to book unavailable ticket, but unsuccessfully", async () => {

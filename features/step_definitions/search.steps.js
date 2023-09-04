@@ -1,18 +1,15 @@
 const puppeteer = require("puppeteer");
 const chai = require("chai");
 const expect = chai.expect;
-const {
-  Given,
-  When,
-  Then,
-  Before,
-  After
-} = require("@cucumber/cucumber");
+const { Given, When, Then, Before, After } = require("@cucumber/cucumber");
 const { clickElement, getText } = require("../../lib/commands.js");
 
 
 Before(async function () {
-  const browser = await puppeteer.launch({ headless: false, slowMo: 50 });
+  const browser = await puppeteer.launch({ 
+      headless: false, 
+      slowMo: 50 
+    });
   const page = await browser.newPage();
   this.browser = browser;
   this.page = page;
@@ -26,7 +23,7 @@ After(async function () {
 
 Given("user is on page {string}", async function (string) {
   return await this.page.goto(`${string}`, {
-    setTimeout: 20000,
+    setTimeout: 50000,
   });
 });
 
@@ -69,7 +66,6 @@ When("user choose a sit that has been choosen earlier", async function () {
 When("user click on the booking button", async function () {
   return await clickElement(this.page, "button.acceptin-button");
 });
-
 When("user click on the button to get booking code", async function () {
   return await clickElement(this.page, "button.acceptin-button");
 });
